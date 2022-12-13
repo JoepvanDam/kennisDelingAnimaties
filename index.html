@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animaties met CSS & JS</title>
+
+    <link rel="stylesheet" href="animationStyle.css">
+    <script defer src="animationScript.js" type="text/javascript"></script>
+</head>
+
+<!--
+    Animations with CSS @keyframes: from&rarr;to | 0%&rarr;100%
+    Animations with CSS transition: new style hover(or other selector(s))+transition
+    Animations with JS + CSS transition: new style JS+transition
+    Animations with JS: frames &rarr; frame changes specific style
+-->
+
+<body>
+    <div id="fullPage">
+        <div id="content">
+            <div id="page1" class="pages">
+                <h1 class="mainTitle">Kennisdeling web animaties met CSS & JS</h1>
+            </div>
+
+            <div id="page2" class="pages">
+                <div id="methodsPage1" class="methodsPages">
+                    <h1 class="methodTitle">4 methodes:</h1>
+                    <ol class="methodList">
+                        <li>CSS @keyframes</li>
+                        <li>CSS selector & transition</li>
+                        <li>JS styling & CSS transition</li>
+                        <li>JS frames</li>
+                    </ol>
+                    <div class="exampleEnableBox">
+                        <h2 class="exampleBoxText">Voorbeelden</h2>
+                        <h2 class="exampleBoxArrow" onclick="examples(0)">&darr;</h2>
+                    </div>
+                </div>
+                <div id="methodsPage2" class="methodsPages">
+                    <h2 class="exampleBoxArrow" onclick="examples(1)">&uarr;</h2>
+                    <div class="exampleContainer">
+                        <div class="exampleBox">
+                            <div class="exampleSquare"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page3" class="pages">
+                <h1 class="mainTitle">CSS @keyframes</h1>
+            </div>
+
+            <div id="page4" class="pages">
+                <h1 class="mainTitle">CSS selector & transition</h1>
+            </div>
+
+            <div id="page5" class="pages">
+                <h1 class="mainTitle">JS styling & CSS transition</h1>
+            </div>
+
+            <div id="page6" class="pages">
+                <h1 class="mainTitle">JS frames</h1>
+            </div>
+
+            <div id="page7" class="pages">
+                <h1 class="mainTitle">Vragen?</h1>
+            </div>
+        </div>
+
+        <div id="road">
+            <img id="image1" onclick="changePage(1)" src="./images/home.svg" class="roadImage roadCurrent"><div class="roadLine"></div>
+            <img id="image2" onclick="changePage(2)" src="./images/info.svg" class="roadImage"><div class="roadLine"></div>
+            <img id="image3" onclick="changePage(3)" src="./images/sheet.svg" class="roadImage"><div class="roadLine"></div>
+            <img id="image4" onclick="changePage(4)" src="./images/sheet.svg" class="roadImage"><div class="roadLine"></div>
+            <img id="image5" onclick="changePage(5)" src="./images/js.svg" class="roadImage"><div class="roadLine"></div>
+            <img id="image6" onclick="changePage(6)" src="./images/js.svg" class="roadImage"><div class="roadLine"></div>
+            <img id="image7" onclick="changePage(7)" src="./images/question.svg" class="roadImage">
+        </div>
+    </div>
+</body>
+</html>
