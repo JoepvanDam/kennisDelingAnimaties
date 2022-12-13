@@ -72,16 +72,51 @@ body {
     flex-direction: row;
     justify-content: start;
 }
+.exampleBoxText { font-size: 24px; margin: 0; }
+.exampleBoxArrow { font-size: 96px; margin: 0; user-select: none; transition: 0.1s; }
+.exampleBoxArrow:hover { transform: scale(1.1); cursor: pointer; }
 .exampleSquare {
     margin: 5px 5px 5px 5px;
     height: 50px;
     width: 50px;
     background-color: var(--text-color);
+    border-radius: 10px;
     transition: 1s;
+    animation: exampleSquare 4s linear infinite forwards;
 }
-.exampleBoxText { font-size: 24px; margin: 0; }
-.exampleBoxArrow { font-size: 96px; margin: 0; user-select: none; transition: 0.1s; }
-.exampleBoxArrow:hover { transform: scale(1.1); cursor: pointer; }
+
+@keyframes exampleSquare {
+    0% { margin: 5px 5px 5px 5px; }
+    25% { margin: 445px 5px 5px 5px; }
+    50% { margin: 445px 5px 5px 445px; }
+    75% { margin: 5px 5px 5px 445px; }
+    100% { margin: 5px 5px 5px 5px; }
+}
+
+.explanationBox {
+    margin: 0 0 0 auto;
+    height: 500px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    gap: 10px;
+}
+
+.explanationImgContainter {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+}
+
+.explanationImg {
+    margin: 0 10%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
 
 .methodsPages {
     position: absolute;
