@@ -73,3 +73,27 @@ function examples(openClose) {
         document.getElementById("methodsPage2").style.top = "100vh";
     }
 }
+
+function exampleBar3larger() { document.getElementById("exampleBar3").style.width = "100%"; }
+function exampleBar3smaller() { document.getElementById("exampleBar3").style.width = "5%"; }
+
+function exampleBar4larger() {
+    let frame = 5;
+    const id = setInterval(() => {
+        if (frame <= 100) {
+            document.getElementById("exampleBar4").style.width = frame+"%";
+            frame++;
+        }
+        else { clearInterval(id); }
+    }, 10);
+}
+function exampleBar4smaller() {
+    let frame = 100;
+    const id = setInterval(() => {
+        if (frame >= 5) {
+            document.getElementById("exampleBar4").style.width = frame+"%";
+            frame--;
+        }
+        else { clearInterval(id); }
+    }, 10);
+}
