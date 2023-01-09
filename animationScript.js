@@ -924,5 +924,3 @@ function continueQuestionMarkDot() {
         else { dot.style.transform = "translate(" + horChange + "px, " + vertChange + "px)"; frame++; }
     }, 10);
 }
-
-changePage(6);
