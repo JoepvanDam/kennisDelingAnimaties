@@ -15,7 +15,7 @@
     #page4exp1animations { top: 25%; }
 
     /* Page 5 */
-    #page5exp1 { top: 30%; width: 800px; left: calc(50% - 400px); }
+    #page5exp1 { top: 25%; height: 450px; width: 800px; left: calc(50% - 400px); }
     #page5exp1control { top: 30%; }
     #page5exp1color { top: 30%; }
     #page5exp1code4 { margin-top: 100px; }
