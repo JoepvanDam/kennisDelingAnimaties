@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animaties met CSS & JS</title>
+
+    <link rel="stylesheet" href="animationStyle.css">
+    <link rel="stylesheet" href="responsiveAnimationStyle.css">
+    <script defer src="animationScript.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="fullPage">
+        <div id="content">
+            <div id="page1" class="pages">
+                <h1 class="mainTitle">Kennisdeling web animaties met CSS & JS</h1>
+            </div>
+
+            <div id="page2" class="pages">
+                <div id="methodsPage1" class="methodsPages">
+                    <h1 class="methodTitle">4 methodes:</h1>
+                    <ol class="methodList">
+                        <li>CSS @keyframes</li>
+                        <li>CSS selector & transition</li>
+                        <li>JS styling & CSS transition</li>
+                        <li>JS frames</li>
+                    </ol>
+                    <div class="exampleEnableBox">
+                        <h2 class="exampleBoxText">Voorbeeld</h2>
+                        <h2 class="exampleBoxArrow" onclick="examples(0)">&darr;</h2>
+                    </div>
+                </div>
+                <div id="methodsPage2" class="methodsPages">
+                    <h2 class="exampleBoxArrow" onclick="examples(1)">&uarr;</h2>
+                    <div class="exampleContainer">
+                        <h3 class="exampleTitle">CSS @keyframes</h3>
+                        <h3 class="exampleTitle">CSS selector & transition</h3>
+                        <h3 class="exampleTitle">JS styling & CSS transition</h3>
+                        <h3 class="exampleTitle">JS frames</h3>
+                        <div class="exampleBox">
+                            <div class="exampleBar exampleBar1"></div>
+                        </div>
+                        <div class="exampleBox">
+                            <div class="exampleBar exampleBar2"></div>
+                        </div>
+                        <div class="exampleBox">
+                            <div class="exampleBar" id="exampleBar3"></div>
+                        </div>
+                        <div class="exampleBox">
+                            <div class="exampleBar" id="exampleBar4"></div>
+                        </div>
+                        <div class="example3container">
+                            <div class="exampleButton" onclick="exampleBar3larger()">&uarr;</div>
+                            <div class="exampleButton" onclick="exampleBar3smaller()">&darr;</div>
+                        </div>
+                        <div class="example4container">
+                            <div class="exampleButton" onclick="exampleBar4larger()">&uarr;</div>
+                            <div class="exampleButton" onclick="exampleBar4smaller()">&darr;</div>
+                        </div>
+                        <div class="exampleExplanationContainer"><img class="exampleExplanation"
+                                src="./images/exampleCSS1.png"></div>
+                        <div class="exampleExplanationContainer"><img class="exampleExplanation"
+                                src="./images/exampleCSS2.png"></div>
+                        <div class="exampleExplanationContainer"><img class="exampleExplanation"
+                                src="./images/exampleCSS3.png"><img class="exampleExplanation"
+                                src="./images/exampleJS1.png"></div>
+                        <div class="exampleExplanationContainer"><img class="exampleExplanation"
+                                src="./images/exampleJS2.png"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page3" class="pages">
+                <div id="page3part1">
+                    <h1 class="mainTitle">CSS @keyframes</h1>
+                    <p class="page3text">Je kan een CSS @keyframes animatie maken door met procenten aan te geven welke stijl van een element verandert.</p>
+                    <p class="page3text">Je kan ook <em>From</em> en <em>To</em> gebruiken, maar dit werkt hetzelfde als 0% en 100%. Zie hier een voorbeeld.</p>
+
+                    <div id="page3exp1animationBox">
+                        <div id="page3exp1animatedElement" onmouseenter="playStateNum = 1; page3exp1select(8)" onmouseleave="playStateNum = 0; page3exp1select(8)"></div>
+                    </div>
+
+                    <div id="page3exp1">
+                        <p class="page3exp1text">
+                            <span id="page3exp1select9a" onclick="page3exp1select(9)">#animatedElement </span>
+                            <span id="page3exp1select9b">{</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span id="page3exp1select0a" onclick="page3exp1select(0)">animation</span>: 
+                                <span id="page3exp1select1a" onclick="page3exp1select(1)">example1Animation </span>
+                                <span id="page3exp1select2a" onclick="page3exp1select(2)">5s </span>
+                                <span id="page3exp1select3" onclick="page3exp1select(3)">ease-in-out </span>
+                                <span id="page3exp1select4" onclick="page3exp1select(4)">1s </span>
+                                <span id="page3exp1select5" onclick="page3exp1select(5)">infinite </span>
+                                <span id="page3exp1select6" onclick="page3exp1select(6)">alternate </span>
+                                <span id="page3exp1select7" onclick="page3exp1select(7)">none</span>
+                                <span id="page3exp1select8" onclick="page3exp1select(8)">running</span>;<br>
+                                <span id="page3exp1select9c">}</span><br>
+                            <br>
+                            <span id="page3exp1select0b">@keyframes</span>
+                            <span id="page3exp1select1b">example1Animation </span>
+                            <span id="page3exp1select1c">{ </span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span id="page3exp1select2b">From </span>
+                                { top: 0; }<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span id="page3exp1select2c">To </span>
+                                { top: calc(100% - 50px); }<br>
+                                <span id="page3exp1select1d">} </span><br>
+                           <br>
+                           <span id="page3exp1select0c">@keyframes</span>
+                           <span id="page3exp1select1e">example1Animation </span>
+                           <span id="page3exp1select1f">{ </span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span id="page3exp1select2d">0% </span>
+                                { top: 0; }<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span id="page3exp1select2e">100% </span>
+                                { top: calc(100% - 50px); }<br>
+                            <span id="page3exp1select1g">} </span><br>
+                        </p>
+                        <p id="page3exp1selectText"><img src='./images/info.svg' class='page3exp1selectImg'></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page4" class="pages">
+                <h1 class="mainTitle">CSS selector & transition</h1>
+                <p class="page4text">Met een CSS selector als :hover, :focus, etc., en een defined transition voor dat element,<br>
+                    kan je een simpele animatie maken. Zie hier een aantal voorbeelden.</p>
+
+                <div id="page4exp1">
+                    <p class="page4exp1text">
+                        <span id="page4expHover1">
+                            <span class="page4expHover1red">#animatedHover</span> <span class="page4expHover1gold">{</span> <span class="page4expHover1blue">width</span>: <span class="page4expHover1green">50px</span>; <span id="page4disableTransition" onclick="page4disableTransition(0)"><span class="page4expHover1blue">transition</span>: <span class="page4expHover1red">all</span> <span class="page4expHover1green" id="page4disableTransitionTime">1000ms</span></span>; <span class="page4expHover1gold">}</span><br>
+                        </span>
+                        <span id="page4expHover2">
+                            <span class="page4expHover2red">#animatedHover</span><span class="page4expHover2gold">:hover</span> <span class="page4expHover2gold">{</span> <span class="page4expHover2blue">width</span>: <span class="page4expHover2green">200px</span>; <span class="page4expHover2gold">}</span><br>
+                        </span>
+                        <br>
+                        <span id="page4expFocus1">
+                            <span class="page4expFocus1red">#animatedFocus</span> <span class="page4expFocus1gold">{</span> <span class="page4expFocus1blue">background-color</span>: <span class="page4expFocus1red">white</span>; <span class="page4expFocus1blue">transition</span>: <span class="page4expFocus1red">all</span> <span class="page4expFocus1green">1s</span>; <span class="page4expFocus1gold">}</span><br>
+                        </span>
+                        <span id="page4expFocus2">
+                            <span class="page4expFocus2red">#animatedFocus</span><span class="page4expFocus2gold">:focus</span> <span class="page4expFocus2gold">{</span> <span class="page4expFocus2blue">background-color</span>: <span class="page4expFocus2red">blue</span>; <span class="page4expFocus2gold">}</span><br>
+                        </span>
+                        <br>
+                        <span id="page4expChecked1">
+                            <span class="page4expChecked1red">#animatedChecked</span> <span class="page4expChecked1gold">{</span> <span class="page4expChecked1blue">outline</span>: <span class="page4expChecked1green">5px</span> <span class="page4expChecked1red">solid white</span>; <span class="page4expChecked1blue">transition</span>: <span class="page4expChecked1red">all</span> <span class="page4expChecked1green">1s</span>; <span class="page4expChecked1gold">}</span><br>
+                        </span>
+                        <span id="page4expChecked2">
+                            <span class="page4expChecked2red">#animatedChecked</span><span class="page4expChecked2gold">:checked</span> <span class="page4expChecked2gold">{</span> <span class="page4expChecked2blue">outline</span>: <span class="page4expChecked2green">5px</span> <span class="page4expChecked2red">solid blue</span>; <span class="page4expChecked2gold">}</span><br>
+                        </span>
+                        <br>
+                        <span id="page4expActive1">
+                            <span class="page4expActive1red">#animatedActive</span> <span class="page4expActive1gold">{</span><br> &nbsp;&nbsp;&nbsp;&nbsp;<span class="page4expActive1blue">background-color</span>: <span class="page4expActive1red">white</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="page4expActive1blue">color</span>: <span class="page4expActive1red">black</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="page4expActive1blue">transition</span>: <span class="page4expActive1red">background-color</span> <span class="page4expActive1green">500ms</span>, <span class="page4expActive1red">color</span> <span class="page4expActive1green">5s</span>;<br><span class="page4expActive1gold">}</span><br>
+                        </span>
+                        <span id="page4expActive2">
+                            <span class="page4expActive2red">#animatedActive</span><span class="page4expActive2gold">:active</span> <span class="page4expActive2gold">{</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="page4expActive2blue">background-color</span>: <span class="page4expActive2red">blue</span>;<br><span class="page4expActive2blue">&nbsp;&nbsp;&nbsp;&nbsp;color</span>: <span class="page4expActive2red">red</span>;<br><span class="page4expActive2gold">}</span><br>
+                        </span>
+                    </p>
+                </div>
+
+                <div id="page4exp1animations">
+                    <div id="page4hoverExp" onmouseenter="page4examples(1)" onmouseleave="page4examples(0)"></div>
+                    <input id="page4focusExp" onfocusin="page4examples(2)" onfocusout="page4examples(0)">
+                    <input type="checkbox" id="page4checkedExp" onchange="page4examples(3)">
+                    <input type="button" id="page4activeExp" value="Button" onmousedown="page4examples(4)" onmouseup="page4examples(0)">
+                </div>
+            </div>
+
+            <div id="page5" class="pages">
+                <h1 class="mainTitle">JS styling & CSS transition</h1>
+                <p class="page5text">Deze methode is nagenoeg hetzelfde als de vorige, maar in plaats van een CSS selector gebruik je JavaScript.</p>
+                <p class="page5text">Het grootste verschil is dat je met JavaScript meer vrijheid hebt in wanneer je een animatie start en eindigt.</p>
+                <p class="page5text">En je kan ook makkelijker 1 object meerdere bewegingen laten doen. Zie hier weer een voorbeeld.</p>
+
+                <div id="page5exp1">
+                    <p class="page5exp1text" id="page5exp1code1">
+                        <span class="page5expRed">#animatedElement</span> <span class="page5expGold">{</span> <span class="page5expBlue">transition</span>: <span class="page5expRed">all</span> <span class="page5expGreen">500ms</span>; <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code2">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">moveTopLeft</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">top</span> = <span class="page5expRed">"0"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">left</span> = <span class="page5expRed">"0"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code3">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">moveTop</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">top</span> = <span class="page5expRed">"0"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">left</span> = <span class="page5expRed">"calc(50% - 50px)"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code4">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">moveTopRight</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">top</span> = <span class="page5expRed">"0"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">left</span> = <span class="page5expRed">"calc(50% - 100px)"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code5">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">moveLeft</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">top</span> = <span class="page5expRed">"calc(50% - 50px)"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">left</span> = <span class="page5expRed">"0"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code6">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">moveCenter</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">top</span> = <span class="page5expRed">"calc(50% - 50px)"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">left</span> = <span class="page5expRed">"calc(50% - 50px)"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code7">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">moveRight</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">top</span> = <span class="page5expRed">"calc(50% - 50px)"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">left</span> = <span class="page5expRed">"calc(50% - 100px)"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code8">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">moveBottomLeft</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">top</span> = <span class="page5expRed">"calc(50% - 100px)"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">left</span> = <span class="page5expRed">"0"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code9">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">moveBottom</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">top</span> = <span class="page5expRed">"calc(50% - 100px)"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">left</span> = <span class="page5expRed">"calc(50% - 50px)"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code10">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">moveBottomRight</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">top</span> = <span class="page5expRed">"calc(50% - 100px)"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">left</span> = <span class="page5expRed">"calc(50% - 100px)"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <p class="page5exp1text" id="page5exp1code11">
+                        <span class="page5expDarkBlue">function</span> <span class="page5expYellow">changeColor</span><span class="page5expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expDarkBlue">const</span> <span class="page5expBlue">animatedElement</span> = <span class="page5expLightBlue">document</span>.<span class="page5expYellow">getElementById</span><span class="page5expPurple">(</span><span class="page5expRed">"animatedElement"</span><span class="page5expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page5expBlue">animatedElement</span>.<span class="page5expLightBlue">style</span>.<span class="page5expLightBlue">backgroundColor</span> = <span class="page5expRed" id="page5expRGB">"rgb(...)"</span>;<br>
+                        <span class="page5expGold">}</span>
+                    </p>
+
+                    <div id="page5exp1animatedElement" onclick="page5showCode(0)"></div>
+                </div>
+
+                <div id="page5exp1control">
+                    <div id="page5exp1random" onclick="page5randomAnimation()">&#127922;</div>
+                    <div class="page5exp1control" id="page5exp1control0" onclick="page5control(0)">&ulcorner;</div>
+                    <div class="page5exp1control" id="page5exp1control1" onclick="page5control(1)">&#95;</div>
+                    <div class="page5exp1control" id="page5exp1control2" onclick="page5control(2)">&urcorner;</div>
+                    <div class="page5exp1control" id="page5exp1control3" onclick="page5control(3)">&#95;</div>
+                    <div class="page5exp1control" id="page5exp1control4" onclick="page5control(4)">&circledcirc;</div>
+                    <div class="page5exp1control" id="page5exp1control5" onclick="page5control(5)">&#95;</div>
+                    <div class="page5exp1control" id="page5exp1control6" onclick="page5control(6)">&llcorner;</div>
+                    <div class="page5exp1control" id="page5exp1control7" onclick="page5control(7)">&#95;</div>
+                    <div class="page5exp1control" id="page5exp1control8" onclick="page5control(8)">&lrcorner;</div>
+                </div>
+                
+                <div id="page5exp1color">
+                    <div class="page5exp1colorItem" onclick="page5colors(12)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color0" onclick="page5colors(0)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color1" onclick="page5colors(1)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color2" onclick="page5colors(2)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color3" onclick="page5colors(3)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color4" onclick="page5colors(4)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color5" onclick="page5colors(5)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color6" onclick="page5colors(6)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color7" onclick="page5colors(7)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color8" onclick="page5colors(8)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color9" onclick="page5colors(9)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color10" onclick="page5colors(10)"></div>
+                    <div class="page5exp1colorItem" id="page5exp1color11" onclick="page5colors(11)"></div>
+                </div>
+            </div>
+
+            <div id="page6" class="pages">
+                <h1 class="mainTitle">JS frames</h1>
+                <p class="page6text">Dit is de meest ingewikkelde, maar ook de leukste methode om animaties mee te maken (vind ik dan).</p>
+                <p class="page6text">Je hebt namelijk heel veel (<em>'oneindige'</em>) vrijheid. Zie hier een voorbeeld.</p>
+
+                <div id="page6exp1">
+                    <p class="page6exp1text" id="page6exp1textBlock1">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElement1</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">frame</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">id</span> = <span class="page6expYellow">setInterval</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">() =&gt; {</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">90</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">frame</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else</span> <span class="page6expGold">{</span> <span class="page6expYellow">clearInterval</span> <span class="page6expGold">(<span class="page6expBlue">id</span>)</span>; <span class="page6expGold">}</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span>, <span class="page6expGreen">10</span><span class="page6expPurple">)</span>;<br>                  
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock2">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElement2</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">frame</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">id</span> = <span class="page6expYellow">setInterval</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">() =&gt; {</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">80</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expLightBlue">frame</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else</span> <span class="page6expGold">{</span> <span class="page6expYellow">clearInterval</span> <span class="page6expGold">(<span class="page6expBlue">id</span>)</span>; <span class="page6expGold">}</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span>, <span class="page6expGreen">10</span><span class="page6expPurple">)</span>;<br>                  
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock3">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElement3</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">frame</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">id</span> = <span class="page6expYellow">setInterval</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">() =&gt; {</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">90</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">frame</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expPurple">(</span><span class="page6expLightBlue">frame</span>*<span class="page6expDarkBlue">(</span><span class="page6expGreen">8</span>/<span class="page6expGreen">9</span><span class="page6expDarkBlue">)</span><span class="page6expPurple">)</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else</span> <span class="page6expGold">{</span> <span class="page6expYellow">clearInterval</span> <span class="page6expGold">(<span class="page6expBlue">id</span>)</span>; <span class="page6expGold">}</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span>, <span class="page6expGreen">10</span><span class="page6expPurple">)</span>;<br>                  
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock4">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElement4</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">frame</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">id</span> = <span class="page6expYellow">setInterval</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">() =&gt; {</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">90</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">frame</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">frame</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">170</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expPurple">(</span><span class="page6expLightBlue">frame</span>-<span class="page6expGreen">90</span><span class="page6expPurple">)</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">frame</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">260</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expPurple">(</span><span class="page6expDarkBlue">(</span><span class="page6expLightBlue">frame</span>*-<span class="page6expGreen">1</span><span class="page6expDarkBlue">)</span>+<span class="page6expGreen">260</span><span class="page6expPurple">)</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">frame</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">340</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expPurple">(</span><span class="page6expDarkBlue">(</span><span class="page6expLightBlue">frame</span>*-<span class="page6expGreen">1</span><span class="page6expDarkBlue">)</span>+<span class="page6expGreen">340</span><span class="page6expPurple">)</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else</span> <span class="page6expGold">{</span> <span class="page6expYellow">clearInterval</span> <span class="page6expGold">(<span class="page6expBlue">id</span>)</span>; <span class="page6expGold">}</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span>, <span class="page6expGreen">10</span><span class="page6expPurple">)</span>;<br>
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock5">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElement4</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">frame</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">topPos</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">leftPos</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">id</span> = <span class="page6expYellow">setInterval</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">() =&gt; {</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">80</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expLightBlue">leftPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">leftPos</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">170</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">topPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">topPos</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">250</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expLightBlue">leftPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">leftPos</span>--; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">340</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">topPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">topPos</span>--; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else</span> <span class="page6expGold">{</span> <span class="page6expYellow">clearInterval</span> <span class="page6expGold">(<span class="page6expBlue">id</span>)</span>; <span class="page6expGold">}</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span>, <span class="page6expGreen">10</span><span class="page6expPurple">)</span>;<br>
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock6">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElement6</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">frame</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">topPos</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">leftPos</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">xPos</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">id</span> = <span class="page6expYellow">setInterval</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">() =&gt; {</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">191</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">topPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expLightBlue">leftPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">xPos</span>++; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">leftPos</span> += <span class="page6expGreen">0.42</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">topPos</span> = -<span class="page6expGreen">0.01</span>*<span class="page6expLightBlue">xPos</span>**<span class="page6expGreen">2</span>+<span class="page6expGreen">90</span>; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else</span> <span class="page6expGold">{</span> <span class="page6expYellow">clearInterval</span> <span class="page6expGold">(<span class="page6expBlue">id</span>)</span>; <span class="page6expGold">}</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span>, <span class="page6expGreen">10</span><span class="page6expPurple">)</span>;<br>
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock7">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElement7</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">frame</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">xRadius</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">yRadius</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">angle</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">id</span> = <span class="page6expYellow">setInterval</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">() =&gt; {</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">1000</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">angle</span> += <span class="page6expGreen">2</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">var</span> <span class="page6expLightBlue">topPos</span> = <span class="page6expLightBlue">yRadius</span> * <span class="page6expLightBlue">Math</span>.<span class="page6expYellow">sin</span><span class="page6expPurple">(</span><span class="page6expLightBlue">angle</span> * <span class="page6expBlue">(</span><span class="page6expLightBlue">Math</span>.<span class="page6expBlue">PI</span> / <span class="page6expGreen">180</span><span class="page6expBlue">)</span><span class="page6expPurple">)</span> + <span class="page6expGreen">205</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">var</span> <span class="page6expLightBlue">leftPos</span> = <span class="page6expLightBlue">xRadius</span> * <span class="page6expLightBlue">Math</span>.<span class="page6expYellow">cos</span><span class="page6expPurple">(</span><span class="page6expLightBlue">angle</span> * <span class="page6expBlue">(</span><span class="page6expLightBlue">Math</span>.<span class="page6expBlue">PI</span> / <span class="page6expGreen">180</span><span class="page6expBlue">)</span><span class="page6expPurple">)</span> + <span class="page6expGreen">95</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">topPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expLightBlue">leftPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else</span> <span class="page6expGold">{</span> <span class="page6expYellow">clearInterval</span> <span class="page6expGold">(<span class="page6expBlue">id</span>)</span>; <span class="page6expGold">}</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span>, <span class="page6expGreen">10</span><span class="page6expPurple">)</span>;<br>
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock8">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElement8</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">frame</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">xRadius</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">yRadius</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">angle</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">numTrailElements</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">id</span> = <span class="page6expYellow">setInterval</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">() =&gt; {</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">1000</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">angle</span> += <span class="page6expGreen">2</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">var</span> <span class="page6expLightBlue">topPos</span> = <span class="page6expLightBlue">yRadius</span> * <span class="page6expLightBlue">Math</span>.<span class="page6expYellow">sin</span><span class="page6expPurple">(</span><span class="page6expLightBlue">angle</span> * <span class="page6expBlue">(</span><span class="page6expLightBlue">Math</span>.<span class="page6expBlue">PI</span> / <span class="page6expGreen">180</span><span class="page6expBlue">)</span><span class="page6expPurple">)</span> + <span class="page6expGreen">205</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">var</span> <span class="page6expLightBlue">leftPos</span> = <span class="page6expLightBlue">xRadius</span> * <span class="page6expLightBlue">Math</span>.<span class="page6expYellow">cos</span><span class="page6expPurple">(</span><span class="page6expLightBlue">angle</span> * <span class="page6expBlue">(</span><span class="page6expLightBlue">Math</span>.<span class="page6expBlue">PI</span> / <span class="page6expGreen">180</span><span class="page6expBlue">)</span><span class="page6expPurple">)</span> + <span class="page6expGreen">95</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">topPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expLightBlue">leftPos</span>+<span class="page6expRed">"%"</span>; <br>
+                                    
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">numTrailElements</span>++; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">trailElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">createElement</span><span class="page6expPurple">(</span><span class="page6expRed">"div"</span><span class="page6expPurple">)</span>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">width</span> = <span class="page6expRed">"10px"</span>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">height</span> = <span class="page6expRed">"10px"</span>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">borderRadius</span> = <span class="page6expRed">"50%"</span>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">position</span> = <span class="page6expRed">"absolute"</span>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">topPos</span> + <span class="page6expRed">"px"</span>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expLightBlue">leftPos</span> + <span class="page6expRed">"px"</span>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">opacity</span> = <span class="page6expPurple">(</span><span class="page6expLightBlue">numTrailElements</span>/<span class="page6expGreen">50</span><span class="page6expPurple">)</span>.<span class="page6expYellow">toString</span><span class="page6expPurple">(</span><span class="page6expPurple">)</span>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailContainer</span>.<span class="page6expYellow">appendChild</span><span class="page6expPurple">(</span><span class="page6expBlue">trailElement</span><span class="page6expPurple">)</span>;<br><br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if (</span><span class="page6expBlue">trailContainer</span>.<span class="page6expBlue">children</span>.<span class="page6expBlue">length</span> > <span class="page6expGreen">50</span><span class="page6expPurple">)</span> <span class="page6expPurple">{</span><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailContainer</span>.<span class="page6expYellow">removeChild</span><span class="page6expDarkBlue">(</span><span class="page6expBlue">trailContainer</span>.<span class="page6expBlue">firstChild</span><span class="page6expDarkBlue">)</span>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">numTrailElements</span>--; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">for</span> <span class="page6expDarkBlue">(let</span> <span class="page6expLightBlue">i</span> = <span class="page6expGreen">0</span>; <span class="page6expLightBlue">i</span> &lt; <span class="page6expBlue">trailContainer</span>.<span class="page6expBlue">children</span>.<span class="page6expBlue">length</span>; <span class="page6expLightBlue">i</span>++<span class="page6expDarkBlue">) {</span> <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">trailContainer</span>.<span class="page6expBlue">children</span><span class="page6expGold">[</span><span class="page6expLightBlue">i</span><span class="page6expGold">]</span>.<span class="page6expLightBlue">style</span>.<span class="page6expLightBlue">opacity</span> =<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">(</span><span class="page6expLightBlue">i</span> / <span class="page6expGreen">50</span><span class="page6expGold">)</span>.<span class="page6expYellow">toString</span><span class="page6expGold">()</span>;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">}</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else</span> <span class="page6expGold">{</span> <span class="page6expYellow">clearInterval</span> <span class="page6expGold">(<span class="page6expBlue">id</span>)</span>; <span class="page6expGold">}</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span>, <span class="page6expGreen">10</span><span class="page6expPurple">)</span>;<br>
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock9">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElement9</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">frame</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">leftPos</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">let</span> <span class="page6expLightBlue">topPos</span> = <span class="page6expGreen">0</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">id</span> = <span class="page6expYellow">setInterval</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">() =&gt; {</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">if</span> <span class="page6expGold">(</span><span class="page6expBlue">frame</span> &lt;= <span class="page6expGreen">1000</span><span class="page6expGold">) {</span> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">leftPos</span> += <span class="page6expGreen">5</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">topPos</span> = <span class="page6expGreen">100</span> * <span class="page6expLightBlue">Math</span>.<span class="page6expYellow">sin</span><span class="page6expPurple">(</span><span class="page6expDarkBlue">(</span><span class="page6expLightBlue">leftPos</span> / <span class="page6expGreen">200</span><span class="page6expDarkBlue">)</span> * <span class="page6expBlue">(</span><span class="page6expLightBlue">Math</span>.<span class="page6expBlue">PI</span> * <span class="page6expGreen">2</span><span class="page6expBlue">)</span><span class="page6expPurple">)</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expLightBlue">topPos</span>+<span class="page6expRed">"px"</span>; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expLightBlue">leftPos</span>+<span class="page6expRed">"px"</span>; <br>
+                                    
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expLightBlue">frame</span>++; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expGold">}</span><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expPurple">else</span> <span class="page6expGold">{</span> <span class="page6expYellow">clearInterval</span> <span class="page6expGold">(<span class="page6expBlue">id</span>)</span>; <span class="page6expGold">}</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">}</span>, <span class="page6expGreen">10</span><span class="page6expPurple">)</span>;<br>
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock12">
+                        <span class="page6expDarkBlue">function</span> <span class="page6expYellow">animateElementReset</span><span class="page6expGold">() {</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expDarkBlue">const</span> <span class="page6expBlue">animatedElement</span> = <span class="page6expLightBlue">document</span>.<span class="page6expYellow">getElementById</span><span class="page6expPurple">(</span><span class="page6expRed">"animatedElement"</span><span class="page6expPurple">)</span>;<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expLightBlue">style</span>.<span class="page6expLightBlue">top</span> = <span class="page6expRed">"0"</span>; <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">animatedElement</span>.<span class="page6expLightBlue">style</span>.<span class="page6expLightBlue">left</span> = <span class="page6expRed">"0"</span>; <br>
+                        <span class="page6expGold">}</span>
+                    </p>
+
+                    <p class="page6exp1text" id="page6exp1textBlock13">
+                        <span class="page6expRed">#animatedElement</span> <span class="page6expGold">{</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">height</span>: <span class="page6expGreen">10%</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="page6expBlue">width</span>: <span class="page6expGreen">20%</span>;<br>
+                        <span class="page6expGold">}</span>
+                    </p>
+                </div>
+
+                <div id="page6exp1animationBox">
+                    <div id="page6exp1animatedElement" onclick="page6showText(12)"></div>
+                </div>
+
+                <div id="page6exp1controller">
+                    <div class="page6exp1controlItem" onclick="page6animateElement1()">&darr;</div>
+                    <div class="page6exp1controlItem" onclick="page6animateElement2()">&rarr;</div>
+                    <div class="page6exp1controlItem" onclick="page6animateElement3()">&#8600;</div>
+                    <div class="page6exp1controlItem" onclick="page6animateElement4()">&#8627;, &#8624;</div>
+                    <div class="page6exp1controlItem" onclick="page6animateElement5()">&#8628;, <span style="transform: rotate(180deg)">&#8628;</span></div>
+                    <div class="page6exp1controlItem" onclick="page6animateElement6()"><span style="transform: rotate(-45deg)">&#10559;</span></div>
+                    <div class="page6exp1controlItem" onclick="page6animateElement7()">&#10227;</div>
+                    <div class="page6exp1controlItem" onclick="page6animateElement8()"><span style="color: #00ffff">&#10227;</span></div>
+                    <div class="page6exp1controlItem" onclick="page6animateElement9()">&#8605;</div>
+                    <div class="page6exp1controlItem" onclick="page6animateElementReset()" style="grid-column: span 3;">RESET</div>
+                </div>
+            </div>
+
+            <div id="page7" class="pages">
+                <svg id="questionMarkEnd" width="21" height="38" viewBox="0 0 21 38" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.3945 0.5C4.84783 0.5 0.394531 5.01015 0.394531 10.75C0.394531 11.5784 1.06613 12.25 1.89453 12.25C2.72293 12.25 3.39453 11.5784 3.39453 10.75C3.39453 6.6099 6.56123 3.5 10.3945 3.5C14.2278 3.5 17.3945 6.6099 17.3945 10.75C17.3945 12.5859 16.9485 13.6009 16.3728 14.3571C15.8962 14.9832 15.3492 15.4403 14.6401 16.0328C14.3417 16.2821 14.0146 16.5553 13.6521 16.8752C12.4978 17.8938 11.2672 19.1863 10.3514 21.2513C9.44573 23.2935 8.89453 25.9838 8.89453 29.75V30C8.89453 30.8284 9.56613 31.5 10.3945 31.5C11.2229 31.5 11.8945 30.8284 11.8945 30V29.75C11.8945 26.2662 12.4058 24.019 13.0938 22.4675C13.7718 20.9387 14.6662 19.9812 15.6369 19.1248C15.8519 18.9351 16.09 18.7364 16.3403 18.5276C17.1388 17.8613 18.0621 17.0909 18.7599 16.1742C19.778 14.8366 20.3945 13.1641 20.3945 10.75C20.3945 5.01015 15.9412 0.5 10.3945 0.5Z"
+                        fill="white" />
+                </svg>
+                <div id="questionMarkDotHome"></div>
+                <div id="questionMarkDot" onclick="continueQuestionMarkDot()"></div>
+            </div>
+        </div>
+
+        <div id="road">
+            <img id="image1" onclick="changePage(1)" src="./images/home.svg" class="roadImage roadCurrent">
+            <div class="roadLine"></div>
+            <img id="image2" onclick="changePage(2)" src="./images/info.svg" class="roadImage">
+            <div class="roadLine"></div>
+            <img id="image3" onclick="changePage(3)" src="./images/sheet.svg" class="roadImage">
+            <div class="roadLine"></div>
+            <img id="image4" onclick="changePage(4)" src="./images/sheet.svg" class="roadImage">
+            <div class="roadLine"></div>
+            <img id="image5" onclick="changePage(5)" src="./images/js.svg" class="roadImage">
+            <div class="roadLine"></div>
+            <img id="image6" onclick="changePage(6)" src="./images/js.svg" class="roadImage">
+            <div class="roadLine"></div>
+            <img id="image7" onclick="changePage(7)" src="./images/question.svg" class="roadImage">
+        </div>
+    </div>
+</body>
+
+</html>
