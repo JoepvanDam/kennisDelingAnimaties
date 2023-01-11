@@ -349,9 +349,9 @@ body {
     position: absolute;
     padding: 5px 20px;
     margin: 0;
-    top: 40%;
+    top: 30%;
     left: calc(50% - 600px);
-    height: 400px;
+    height: 500px;
     width: 1200px;
     border: 2px solid var(--text-color);
     border-radius: 10px;
